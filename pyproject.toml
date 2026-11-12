@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tanflow"
+version = "1.0.0"
+description = "Closure-Preserving Velocity Flow Matching for Trajectory Gap Repair"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.0"]
+
+# Install the library only. ``scripts/`` is repository-only orchestration and
+# must not be exported into site-packages.
+[tool.setuptools]
+packages = [
+    "rapg",
+    "rapg.configs",
+    "rapg.data",
+    "rapg.eval",
+    "rapg.flow",
+    "rapg.research",
+    "rapg.source",
+    "rapg.train",
+]
+
+[tool.setuptools.package-data]
+rapg = ["configs/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q -p no:cacheprovider"

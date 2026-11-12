@@ -1,0 +1,8 @@
+model: {name: FlowTCN, width: 64, in_channels: 8, dilations: [1, 2, 4]}
+prior_mode: kinematic
+obs_context: bi
+rho_mode: off
+source: s2
+optimizer: {batch_size: 256, lr: 0.0003, weight_decay: 0.0001, grad_clip: 1, warmup_fraction: 0.05}
+solver: {method: heun, steps: 4, nfe: 8, start_time: 0}
+budget: {default: 30000, sdd: 60000, eval_every: 500}

@@ -1,0 +1,14 @@
+# Exact direct dependencies exported from the validated test environment.
+# Install with: python3 -m pip install -r requirements-freeze.txt
+torch==2.14.0
+numpy==2.5.3
+scipy==1.18.1
+pyyaml==6.0.3
+pytest==9.1.1
+
+# Transitive test dependencies exported from the same environment.
+iniconfig==2.3.0
+packaging==26.3
+pluggy==1.6.0
+pygments==2.21.0
+
